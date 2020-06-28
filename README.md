@@ -16,3 +16,4 @@ Run client:
 2. npm install
 3. npm run dev
 
+Go to http://localhost:9090
