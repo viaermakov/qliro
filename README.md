@@ -11,9 +11,8 @@ Run server:
 2. npm install
 3. npm start
 
-
 Run client: 
-4. cd ../client
-5. npm install
-6. npm run dev
+1. cd ./client
+2. npm install
+3. npm run dev
 
