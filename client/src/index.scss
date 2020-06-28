@@ -1,0 +1,35 @@
+html,
+body {
+  min-width: 100%;
+  min-height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  background: #fff;
+}
+
+html {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+:root {
+  --checked-state-check-color: #fff;
+  --outline-offset: 2px;
+  --checked-state-bg-color: hsl(0, 3%, 8%);
+  --outline-color: var(--checked-state-bg-color);
+}

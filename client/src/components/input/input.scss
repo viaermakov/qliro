@@ -1,0 +1,15 @@
+.input {
+  display: block;
+  height: 32px;
+  max-width: 248px;
+  width: 100%;
+  padding: 0 8px;
+  font-size: 1.3rem;
+  box-sizing: border-box;
+  border: 1px solid hsl(0, 0%, 93%);
+}
+
+.input:focus {
+  outline: 3px solid var(--outline-color);
+  outline-offset: var(--outline-offset);
+}

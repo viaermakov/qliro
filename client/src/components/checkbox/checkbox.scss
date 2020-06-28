@@ -1,0 +1,51 @@
+.checkbox {
+  --checked-state-check-color: hsl(0, 0%, 100%);
+
+  cursor: pointer;
+  display: flex;
+  align-items: start;
+}
+
+.checkbox input[type="checkbox"] {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+  opacity: 0;
+
+  &:focus:not(:focus-visible) + svg {
+    outline: none;
+  }
+
+  &:focus + svg {
+    outline: 3px solid var(--outline-color);
+    outline-offset: var(--outline-offset);
+  }
+
+  &:checked + svg {
+    .bg {
+      fill: var(--checked-state-bg-color);
+      stroke: var(--checked-state-bg-color);
+    }
+
+    .cm {
+      stroke: var(--checked-state-check-color);
+    }
+  }
+}
+
+.checkbox svg {
+  width: 1em;
+  height: 1em;
+
+  margin-right: 0.5em;
+  margin-top: 0.1em;
+
+  * {
+    transition: all 0.1s linear;
+  }
+}
+
+.labelText {
+  padding-right: 8px;
+}
