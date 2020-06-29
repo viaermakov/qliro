@@ -30,8 +30,8 @@ test("Input should receive all props", async () => {
   });
 
   const input = document.querySelector("input");
-  const inputWrapper = document.querySelector("div");
   const label = document.querySelector("label");
+  
   expect(input.type).toBe("number");
   expect(label.innerHTML).toBe("my input");
   expect(input.name).toBe("my input");

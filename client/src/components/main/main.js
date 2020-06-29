@@ -1,9 +1,11 @@
 import React, { useReducer, useState } from "react";
+import qs from "querystring";
+import axios from "axios";
+
 import { Input } from "../input";
 import { Checkbox } from "../checkbox";
 import { Button } from "../button";
-import qs from "querystring";
-import axios from "axios";
+
 import styles from "./main.scss";
 
 const fetchData = async (url) => {
@@ -11,7 +13,7 @@ const fetchData = async (url) => {
   return data;
 };
 
-const initState = {
+const initialState = {
   error: null,
   isLoading: false,
   result: null,
@@ -46,7 +48,7 @@ function mainReducer(state, action) {
 }
 
 function Main() {
-  const [state, dispatch] = useReducer(mainReducer, initState);
+  const [state, dispatch] = useReducer(mainReducer, initialState);
   const [experiments, setExperiments] = useState(null);
   const [hasChangedDoor, setHasChangedDoor] = useState(false);
 

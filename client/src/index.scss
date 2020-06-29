@@ -26,10 +26,3 @@ a {
     font-size: 14px;
   }
 }
-
-:root {
-  --checked-state-check-color: #fff;
-  --outline-offset: 2px;
-  --checked-state-bg-color: hsl(0, 3%, 8%);
-  --outline-color: var(--checked-state-bg-color);
-}

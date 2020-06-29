@@ -14,9 +14,8 @@ function playMontyHallGame(shouldSwitch) {
       (door) => door !== selectedDoor && door !== firstOpenedDoor
     );
     return doorWithCar === anotherSelectedDoor;
-  } else {
-    return doorWithCar === selectedDoor;
   }
+  return doorWithCar === selectedDoor;
 }
 
 function simulateMontyHallGame(num, shouldSwitch) {
@@ -24,11 +23,7 @@ function simulateMontyHallGame(num, shouldSwitch) {
   for (let i = 0; i < num; i++) {
     gamesWon += playMontyHallGame(shouldSwitch);
   }
-  return (gamesWon / num * 100).toFixed(2);
-}
-
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+  return ((gamesWon / num) * 100).toFixed(2);
 }
 
 router.get("/", async (req, res, next) => {
