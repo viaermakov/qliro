@@ -71,6 +71,7 @@ function Main() {
       }
       dispatch({ type: "SUCCESS", result: data.chances });
     } catch (e) {
+      console.log(e);
       dispatch({ type: "ERROR", error: e.message });
     }
   };
@@ -93,6 +94,7 @@ function Main() {
           className={styles.field}
           type="number"
           required={true}
+          min={1}
           onChange={(v) => setExperiments(v)}
         />
         <Checkbox

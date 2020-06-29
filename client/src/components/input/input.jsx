@@ -12,6 +12,7 @@ const Input = ({
   onChange,
   className,
   required,
+  min
 }) => {
   const [localValue, setLocalValue] = React.useState("");
 
@@ -33,6 +34,7 @@ const Input = ({
         id={id}
         name={name}
         type={type}
+        min={min}
         value={localValue}
         placeholder={placeholder}
         disabled={disabled}

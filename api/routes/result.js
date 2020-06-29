@@ -28,7 +28,7 @@ function simulateMontyHallGame(num, shouldSwitch) {
 
 router.get("/", async (req, res, next) => {
   res.setHeader("Content-Type", "application/json");
-  const { experiments = "", changed = "" } = req.query;
+  const { experiments, changed = "" } = req.query;
 
   if (experiments) {
     const chances = simulateMontyHallGame(experiments, Boolean(changed));
