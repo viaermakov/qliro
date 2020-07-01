@@ -71,7 +71,6 @@ function Main() {
       }
       dispatch({ type: "SUCCESS", result: data.chances });
     } catch (e) {
-      console.log(e);
       dispatch({ type: "ERROR", error: e.message });
     }
   };
