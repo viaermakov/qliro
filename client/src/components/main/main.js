@@ -69,6 +69,9 @@ function Main() {
       if (data.error) {
         throw new Error(data.error);
       }
+      if (!data.chances) {
+        throw new Error('Not valid response from backend');
+      }
       dispatch({ type: "SUCCESS", result: data.chances });
     } catch (e) {
       dispatch({ type: "ERROR", error: e.message });

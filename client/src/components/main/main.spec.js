@@ -28,6 +28,31 @@ test("input field should be filled", async () => {
   expect(input.value).toBe("5");
 });
 
+test("should return valid data from api", async () => {
+  act(() => {
+    render(<Main />, container);
+  });
+
+  axiosMock.get.mockResolvedValueOnce({
+    data: { notvalidproperty: 'not true' },
+  });
+
+  const input = document.querySelector("#experiments");
+  fireEvent.change(input, { target: { value: 5 }, bubbles: true });
+
+  await act(async () => {
+    fireEvent.click(screen.getByRole("button"));
+  });
+
+  expect(axiosMock.get).toHaveBeenCalledTimes(1);
+  expect(axiosMock.get).toHaveBeenCalledWith(
+    "http://localhost:3000/result?experiments=5"
+  );
+  expect(document.querySelector("[data-testid='result']").innerHTML).toBe(
+    "Not valid response from backend"
+  );
+});
+
 test("checkbox should be toggled after click", async () => {
   act(() => {
     render(<Main />, container);
@@ -145,3 +170,5 @@ test("should not submit with empty experiments field", async () => {
   });
   expect(axiosMock.get).toHaveBeenCalledTimes(0);
 });
+
+
